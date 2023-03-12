@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectBehaviourToggle, selectDropdown, setSelected, toggleDropdown } from "../../redux/behaviourToggleSlice";
-import "./dropdownMenu.css";
+import { selectBehaviourToggle, setSelected, toggleDropdown } from "../../redux/behaviourToggleSlice";
+import "./behaviourSelector.css";
 
-const DropdownMenu = () => {
+const BehaviourSelector = () => {
     const { behaviourToggle, selected } = useSelector(selectBehaviourToggle);
     const dispatch = useDispatch();
     const menuList = ["Easy language", "Default Language", "Intermediate Language", "Expert Language"]
@@ -22,21 +22,21 @@ const DropdownMenu = () => {
         dispatch(setSelected(newSelect));
     }
     return (
-        <div className="dropdownMenu">
-            <div className="dropdownMenu__dropdown">
+        <div className="behaviourSelector">
+            <div className="behaviourSelector__dropdown">
                 <div 
-                    className={currentDropdownStatus === false ? "dropdownMenu__dropdown__selection" : "dropdownMenu__dropdown__selection select-clicked"}
+                    className={currentDropdownStatus === false ? "behaviourSelector__dropdown__selection" : "behaviourSelector__dropdown__selection select-clicked"}
                     onClick={handleDropdownClick}>
-                    <span className="dropdownMenu__dropdown__selection--selected">
+                    <span className="behaviourSelector__dropdown__selection--selected">
                         {
                             menuList[selected]
                         }
                     </span>
-                    <div className={currentDropdownStatus === false ? "dropdownMenu__dropdown__selection--caret" : "dropdownMenu__dropdown__selection--caret caret-rotate"}>
+                    <div className={currentDropdownStatus === false ? "behaviourSelector__dropdown__selection--caret" : "behaviourSelector__dropdown__selection--caret caret-rotate"}>
 
                     </div>
                 </div>
-                <ul className={currentDropdownStatus === false ? "dropdownMenu-dropdown__menu" : "dropdownMenu-dropdown__menu dropdownMenu-dropdown__menu--open"}>
+                <ul className={currentDropdownStatus === false ? "behaviourSelector-dropdown__menu" : "behaviourSelector-dropdown__menu behaviourSelector-dropdown__menu--open"}>
                     {
                         menuList.map((item, index) => (
                             index !== selected &&
@@ -54,4 +54,4 @@ const DropdownMenu = () => {
     );
 };
 
-export default DropdownMenu;
+export default BehaviourSelector;

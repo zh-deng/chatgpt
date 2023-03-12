@@ -4,7 +4,6 @@ export const wikiToggleSlice = createSlice({
     name: "wikiToggle",
     initialState: {
         wikiToggle: false,
-        list: [],
         selected: 0
     },
     reducers: {

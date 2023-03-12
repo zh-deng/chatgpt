@@ -4,7 +4,6 @@ export const behaviourToggleSlice = createSlice({
     name: "behaviourToggle",
     initialState: {
         behaviourToggle: false,
-        list: [],
         selected: 0
     },
     reducers: {
