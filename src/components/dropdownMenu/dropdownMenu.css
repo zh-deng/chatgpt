@@ -1,0 +1,78 @@
+.dropdownMenu__dropdown {
+    min-width: 15em;
+    max-width: 30em;
+    position: relative;
+    margin: 2em;
+}
+
+.dropdownMenu__dropdown__selection {
+    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid red;
+    border-radius: 0.5em;
+    padding: 0.7em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dropdownMenu__dropdown__selection:hover {
+    background-color: white;
+}
+
+.select-clicked {
+    border: 2px solid green;
+    box-shadow: 0 0 0.8em yellow;
+}
+
+.dropdownMenu__dropdown__selection--caret {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid black;
+    transition: 0.3s;
+}
+
+.caret-rotate {
+    transform: rotate(180deg);
+}
+
+.dropdownMenu-dropdown__menu {
+    position: absolute;
+    top: 3.5em;
+    left: 50%;
+    width: 100%;
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background-color: yellow;
+    border: 1px solid red;
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+    border-radius: 0.5em;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+}
+
+.dropdownMenu-dropdown__menu li {
+    padding: 0.7em 0.5em;
+    margin: 0.3em 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.dropdownMenu-dropdown__menu li:hover {
+    background-color: white;
+}
+
+.active {
+    background-color: green;
+}
+
+.dropdownMenu-dropdown__menu--open {
+    display: block;
+    opacity: 1;
+}
