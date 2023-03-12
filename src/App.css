@@ -10,3 +10,8 @@
   background-color: rgb(47, 47, 166);
   font-family: var(--font-family);
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}

@@ -6,12 +6,14 @@ const heroText = "Das Projekt ChatWithAI wurde entwickelt um die neuen Technolog
 const Hero = () => {
     return (
         <div className="hero" id="about">
-            <h1>
-                Über dieses Project
-            </h1>
-            <p>
-                {heroText}
-            </p>
+            <div className="hero__content">
+                <h1>
+                    Über dieses Project
+                </h1>
+                <p>
+                    {heroText}
+                </p>
+            </div>
         </div>
     );
 };

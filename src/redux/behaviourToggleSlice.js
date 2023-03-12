@@ -8,7 +8,7 @@ export const behaviourToggleSlice = createSlice({
         selected: 0
     },
     reducers: {
-        toggleDropdown: (state, action) => {
+        toggleDropdown: (state) => {
             state.behaviourToggle = state.behaviourToggle === false ? true : false;
         },
         setSelected: (state, action) => {
@@ -18,7 +18,7 @@ export const behaviourToggleSlice = createSlice({
     }
 });
 
-export const selectDropdown = state => state.behaviourToggle;
+export const selectBehaviourToggle = state => state.behaviourToggle;
 
 export const { toggleDropdown, setSelected } = behaviourToggleSlice.actions;
 

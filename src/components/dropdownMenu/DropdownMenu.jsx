@@ -1,15 +1,16 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectDropdown, setSelected, toggleDropdown } from "../../redux/behaviourToggleSlice";
+import { selectBehaviourToggle, selectDropdown, setSelected, toggleDropdown } from "../../redux/behaviourToggleSlice";
 import "./dropdownMenu.css";
 
-const DropdownMenu = ({menuList, toggleId}) => {
-    const { behaviourToggle, selected } = useSelector(selectDropdown);
+const DropdownMenu = () => {
+    const { behaviourToggle, selected } = useSelector(selectBehaviourToggle);
     const dispatch = useDispatch();
+    const menuList = ["Easy language", "Default Language", "Intermediate Language", "Expert Language"]
     const currentDropdownStatus = behaviourToggle;
     let list = menuList;
     const handleDropdownClick = () => {
-        dispatch(toggleDropdown(toggleId));
+        dispatch(toggleDropdown());
     }
     const handleMenuClick = (newSelect) => {
         const newList = [];
@@ -49,7 +50,6 @@ const DropdownMenu = ({menuList, toggleId}) => {
                     }
                 </ul>
             </div>
-            <div>{String(currentDropdownStatus)}</div>
         </div>
     );
 };
