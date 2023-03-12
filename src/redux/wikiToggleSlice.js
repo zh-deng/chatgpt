@@ -4,7 +4,8 @@ export const wikiToggleSlice = createSlice({
     name: "wikiToggle",
     initialState: {
         wikiToggle: false,
-        selected: 0
+        selected: 0,
+        wikiText: "Loading..."
     },
     reducers: {
         toggleDropdown: (state) => {
@@ -12,13 +13,16 @@ export const wikiToggleSlice = createSlice({
         },
         setSelected: (state, action) => {
             state.selected = action.payload;
-            state.wiki = false;
+            state.wikiToggle = false;
+        },
+        setWikiText: (state, action) => {
+            state.wikiText = action.payload;
         },
     }
 });
 
-export const selectDropdown = state => state.wikiToggle;
+export const selectWikiToggle = state => state.wikiToggle;
 
-export const { toggleDropdown, setSelected } = wikiToggleSlice.actions;
+export const { toggleDropdown, setSelected, setWikiText } = wikiToggleSlice.actions;
 
 export default wikiToggleSlice.reducer;

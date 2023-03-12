@@ -36,7 +36,7 @@ const BehaviourSelector = () => {
 
                     </div>
                 </div>
-                <ul className={currentDropdownStatus === false ? "behaviourSelector-dropdown__menu" : "behaviourSelector-dropdown__menu behaviourSelector-dropdown__menu--open"}>
+                <ul className={currentDropdownStatus === false ? "behaviourSelector__dropdown__menu" : "behaviourSelector__dropdown__menu behaviourSelector__dropdown__menu--open"}>
                     {
                         menuList.map((item, index) => (
                             index !== selected &&
