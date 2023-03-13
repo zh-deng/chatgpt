@@ -1,23 +1,31 @@
 .chatbox {
     background-color: green;
     padding: 2rem 1rem;
+    position: relative;
+}
+
+.chatbox > * {
+    width: 60rem;
+    margin: 0 auto;
+    max-width: 95%;
 }
 
 .chatbox__dialog-container {
     background-color: white;
     padding: 1rem;
-    border: 1px solid black;
+    border: 5px double black;
     border-radius: 0.5rem;
     height: 30rem;
-    overflow: scroll;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
-.chatbox__dialog-container span {
+.chatbox__dialog-container__dialog span {
     margin: 0.5rem 0;
 
 }
 
-.chatbox__dialog-container p {
+.chatbox__dialog-container__dialog p {
     width: fit-content;
     border-radius: 1rem;
     padding: 0.5rem 1rem;
@@ -26,34 +34,48 @@
     letter-spacing: 0.03em;
 }
 
-.chatbox__dialog-container__user span {
+.chatbox__dialog-container__dialog__user span {
     width: 70%;
     display: flex;
     justify-content: left;
 }
 
-.chatbox__dialog-container__user p {
+.chatbox__dialog-container__dialog__user p {
     background-color: red;
 }
 
-.chatbox__dialog-container__chatGPT {
+.chatbox__dialog-container__dialog__chatGPT {
     display: flex;
     justify-content: right;
 }
 
-.chatbox__dialog-container__chatGPT span {
+.chatbox__dialog-container__dialog__chatGPT span {
     width: 70%;
     display: flex;
     justify-content: right;
 }
 
-.chatbox__dialog-container__chatGPT p {
+.chatbox__dialog-container__dialog__chatGPT p {
     background-color: blue;
+}
+
+
+.chatbox__dialog-container__typing {
+    padding: 0.5rem 1.5rem;
+    margin-top: 0.5rem;
+    height: 2rem;
+    font-size: 1.3rem;
+    letter-spacing: 0.03em;
+    color: white;
+}
+
+.invisible > * {
+    display: none;
 }
 
 .chatbox__input__textarea textarea {
     width: 100%;
-    margin: 2rem 0 0.5rem 0;
+    margin: 0.5rem 0 0.5rem 0;
     padding: 1rem;
     font-size: 1.2rem;
     resize: none;

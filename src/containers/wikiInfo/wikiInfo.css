@@ -10,7 +10,9 @@
     border: 1px solid black;
     border-radius: 0.5rem;
     padding: 1rem;
-    margin-bottom: 1rem;
+    width: 60rem;
+    max-width: 95%;
+    margin: 0 auto 1rem auto;
 }
 
 .wikiInfo__article-container p {

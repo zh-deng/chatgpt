@@ -30,7 +30,7 @@ const WikiInfo = () => {
 
     getData();
     return (
-        <div className="wikiInfo">
+        <div className="wikiInfo" id="chatGPT">
             <WikiSelector menuList={menuList}/>
             <div className="wikiInfo__article-container">
                 <p>
