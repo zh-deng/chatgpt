@@ -5,7 +5,7 @@ import { BsFillFileEarmarkPdfFill } from "react-icons/bs";
 const PdfCreator = () => {
     return (
         <div className="pdfCreator">
-            <BsFillFileEarmarkPdfFill />
+            <BsFillFileEarmarkPdfFill className="pdfCreator__icon"/>
             <p>
                 Konversation als PDF runterladen
             </p>

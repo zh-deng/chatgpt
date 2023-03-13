@@ -7,7 +7,7 @@ import "./wikiInfo.css";
 const WikiInfo = () => {
     const { wikiText, selected } = useSelector(selectWikiToggle);
     const dispatch = useDispatch();
-    
+
     const menuList = ["ChatGPT", "OpenAI", "Künstliche Intelligenz"];
     const wikiEndpoint = "https://de.wikipedia.org/w/api.php";
     const wikiParams = "?action=query"
@@ -33,7 +33,9 @@ const WikiInfo = () => {
         <div className="wikiInfo">
             <WikiSelector menuList={menuList}/>
             <div className="wikiInfo__article-container">
-                {wikiText}
+                <p>
+                    {wikiText}
+                </p>
             </div>
         </div>
     );
