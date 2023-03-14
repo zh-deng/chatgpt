@@ -1,8 +1,15 @@
 .wikiInfo {
     max-width: 100%;
-    padding: 2rem 1rem;
-    margin: 7rem 0;
-    background-color: pink;
+    padding: 2rem 1rem 5rem 1rem;
+    background-color: rgb(41, 44, 79);
+}
+
+.wikiInfo__heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    color: white;
 }
 
 .wikiInfo__article-container {
@@ -18,4 +25,10 @@
 .wikiInfo__article-container p {
     letter-spacing: 0.03em;
     line-height: 1.3em;
+}
+
+@media screen and (min-width: 720px) {
+    .wikiInfo {
+        padding: 10rem 1rem;
+    }
 }

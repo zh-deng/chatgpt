@@ -1,10 +1,23 @@
 .hero {
-    margin: 2rem auto 5rem auto;
-    max-width: 90%;
+    width: 100%;
+    height: 30rem;
+    background-image: url(../../assets/hero/hero_background_1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+
 .hero__content {
+    margin: 2rem auto 5rem auto;
+    width: 60rem;
+    max-width: 95%;
     text-align: center;
+    color: white;
+    font-weight: 600;
 }
 
 .hero__content h1 {
@@ -12,6 +25,15 @@
 }
 
 .hero__content p {
-    line-height: 1.3em;
-    letter-spacing: 0.03em;
+    line-height: 1.8em;
+    letter-spacing: 0.05em;
+}
+
+@media screen and (min-width: 480px) {
+    .hero {
+        height: 50rem;
+    }
+    .hero__content {
+        font-size: 1.5rem;
+    }
 }

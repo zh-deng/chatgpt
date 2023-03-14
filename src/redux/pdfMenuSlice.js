@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const pdfMenuSlice = createSlice({
     name: "pdfMenu",
     initialState: {
-        active: true
+        active: false
     },
     reducers: {
         togglePdf: (state) => {

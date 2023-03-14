@@ -31,6 +31,11 @@ const WikiInfo = () => {
     getData();
     return (
         <div className="wikiInfo" id="chatGPT">
+            <div className="wikiInfo__heading">
+                <h1>
+                    ChatGPT
+                </h1>
+            </div>
             <WikiSelector menuList={menuList}/>
             <div className="wikiInfo__article-container">
                 <p>

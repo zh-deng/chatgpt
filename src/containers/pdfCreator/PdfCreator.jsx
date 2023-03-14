@@ -12,7 +12,7 @@ const PdfCreator = () => {
     const dispatch = useDispatch();
 
     const handleButtonClick = () => {
-        dispatch(togglePdf());
+        (dialog.length > 0) && dispatch(togglePdf());
     };
 
     return (
@@ -31,12 +31,12 @@ const PdfCreator = () => {
                 </div>
                 <div className="pdfCreator__menu__selection">
                     {
-                        dialog.map((messageObject) => {
+                        dialog.map((messageObject, index) => {
                             return (
-                                <div>
-                                    <h5>
+                                <div key={messageObject.source + index}>
+                                    <h4>
                                         {messageObject.source}
-                                    </h5>
+                                    </h4>
                                     <p>
                                         {messageObject.message}
                                     </p>

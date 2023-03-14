@@ -1,11 +1,24 @@
 .navbar {
     position: relative;
+    z-index: 10;
+}
+
+.navbar__content{
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 50px;
     padding: 0.1em 0.3em;
     border-bottom: 10px double red;
+    background-color: black;
+    width: 100%;
+    height: 5rem;
+    top: 0;
+}
+
+.navbar * {
+    color: white;
 }
 
 .navbar__logo {
@@ -23,9 +36,9 @@
     justify-content: center;
     align-items: center;
     font-size: 2rem;
-    top: 6rem;
+    top: 5.1rem;
     right: 0.2rem;
-    background-color: grey;
+    background-color: rgb(27, 22, 22);
     padding: 0.2em 0.3em;
     z-index: 10;
     border: 2px solid black;
@@ -39,7 +52,7 @@
 }
 
 .navbar__links-container__mobile--on p:hover {
-    background-color: green;
+    background-color: grey;
 }
 
 .navbar__links-container__mobile--on a {

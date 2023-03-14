@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectBehaviourToggle, setSelected, toggleDropdown } from "../../redux/behaviourToggleSlice";
 import "./behaviourSelector.css";
 
-const BehaviourSelector = () => {
+const BehaviourSelector = ({menuList}) => {
     const { behaviourToggle, selected } = useSelector(selectBehaviourToggle);
     const dispatch = useDispatch();
-    const menuList = ["Easy language", "Default Language", "Intermediate Language", "Expert Language"]
     const currentDropdownStatus = behaviourToggle;
     let list = menuList;
     const handleDropdownClick = () => {

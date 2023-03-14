@@ -1,14 +1,34 @@
 import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PdfCreator, BehaviourSelector } from "../../containers/index";
+import { selectBehaviourToggle } from "../../redux/behaviourToggleSlice";
 import { addMessage, selectDialog, toggleWait, updateCurrentMessage } from "../../redux/conversationSlice";
 import "./chatbox.css";
 
-const API_KEY = "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";
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 const Chatbox = () => {
     const { dialog, currentMessage, wait } = useSelector(selectDialog);
+    const { selected } = useSelector(selectBehaviourToggle);
     const dispatch = useDispatch();
+
+    const menuList = ["Englisch", "Deutsch", "Einfache Sprache", "Expertensprache"]
+    let contentStyle = "";
+    switch(menuList[selected]) {
+        case "Englisch":
+            contentStyle = "Reply only in english";
+            break;
+        case "Deutsch":
+            contentStyle = "Reply only in german language"
+            break;
+        case "Einfache Sprache":
+            contentStyle = "Reply to me as if i am a 10 year old child"
+            break;
+        case "Expertensprache":
+            contentStyle = "Reply to me as you were an expert"
+            break;
+        
+    }
 
     const convertApiMessage = () => {
         let messages = dialog.map((messageObject) => {
@@ -22,7 +42,7 @@ const Chatbox = () => {
         let apiMessages = convertApiMessage();
         const systemMessage = {
             role: "system",
-            content: ""
+            content: contentStyle
         }
         const apiFetchBody = {
             "model": "gpt-3.5-turbo",
@@ -55,9 +75,20 @@ const Chatbox = () => {
     }
     return (
         <div className="chatbox" id="chat">
-            <BehaviourSelector />
+            <div className="chatbox__heading">
+                <h1>
+                    Let's chat!
+                </h1>
+                <p>Hier können sie sich mit dem neuen Chatsystem ChatGPT unterhalten. Derzeit ist das Feature noch in Produktion und hat deshalb noch kleine Bugs. Die erste Antwort des Bots ist eine zufällige. Jede weitere Antwort bezieht sich dann auf die vorherige Nachricht statt der aktuellen. Ich bitte um ihr Verständnis</p>
+            </div>
+            <BehaviourSelector menuList={menuList}/>
             <div className="chatbox__dialog-container">
                 <div className="chatbox__dialog-container__dialog">
+                    <div className={"chatbox__dialog-container__dialog__chatGPT"}>
+                        <span>
+                            <p>Hallo, ich bin ChatGPT. Lass uns chatten!</p>
+                        </span>
+                    </div>
                     {
                         dialog.map((item, index) => {
                             return(
@@ -71,7 +102,7 @@ const Chatbox = () => {
                     }
                 </div>
             </div>
-            <div className={wait === true ? "chatbox__dialog-container__typing" : "chatbox__dialog-container__typing invisible"}>
+            <div className={wait === true ? "chatbox__dialog-container__typing--on" : "chatbox__dialog-container__typing--off"}>
                 <h5>ChatGPT is typing...</h5>
             </div>
             <div className="chatbox__input">

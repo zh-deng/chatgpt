@@ -5,10 +5,13 @@
   scroll-behavior: smooth;
 }
 
+body {
+  padding-top: 5rem; 
+}
 
 .App {
-  background-color: rgb(47, 47, 166);
   font-family: var(--font-family);
+  position: relative;
 }
 
 a {

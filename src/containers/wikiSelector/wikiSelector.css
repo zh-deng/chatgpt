@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1rem 0;
 }
 
 .wikiSelector__dropdown {
@@ -16,7 +17,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid red;
+    border: 2px solid black;
     border-radius: 0.5em;
     padding: 0.7em;
     cursor: pointer;
@@ -24,11 +25,11 @@
 }
 
 .wikiSelector__dropdown__selection:hover {
-    background-color: white;
+    background-color: rgb(245, 134, 36);
 }
 
 .select-clicked {
-    border: 2px solid green;
+    border: 2px solid black;
     box-shadow: 0 0 0.8em yellow;
 }
 
@@ -52,8 +53,8 @@
     width: 100%;
     list-style: none;
     padding: 0.2em 0.5em;
-    background-color: yellow;
-    border: 1px solid red;
+    background-color: orange;
+    border: 1px solid black;
     box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
     border-radius: 0.5em;
     transform: translateX(-50%);
@@ -71,8 +72,9 @@
 }
 
 .wikiSelector__dropdown__menu li:hover {
-    background-color: white;
+    background-color: rgb(245, 134, 36);
 }
+
 
 .active {
     background-color: green;
