@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PdfCreator, BehaviourSelector } from "../../containers/index";
 import { selectBehaviourToggle } from "../../redux/behaviourToggleSlice";
@@ -11,6 +11,11 @@ const Chatbox = () => {
     const { dialog, currentMessage, wait } = useSelector(selectDialog);
     const { selected } = useSelector(selectBehaviourToggle);
     const dispatch = useDispatch();
+    const lastMessageRef = useRef(null);
+
+    useEffect(() => {
+        focusLatestMessage();
+    },[wait]);
 
     const menuList = ["Englisch", "Deutsch", "Einfache Sprache", "Expertensprache"]
     let contentStyle = "";
@@ -28,6 +33,10 @@ const Chatbox = () => {
             contentStyle = "Reply to me as you were an expert"
             break;
         
+    }
+
+    const focusLatestMessage = () => {
+        lastMessageRef.current.scrollIntoView({block: "nearest"});
     }
 
     const convertApiMessage = () => {
@@ -92,7 +101,10 @@ const Chatbox = () => {
                     {
                         dialog.map((item, index) => {
                             return(
-                                <div className={"chatbox__dialog-container__dialog__" + item.source} key={item.source + index}>
+                                <div 
+                                    className={"chatbox__dialog-container__dialog__" + item.source} 
+                                    key={item.source + index}
+                                >
                                     <span>
                                         <p>{item.message}</p>
                                     </span>
@@ -100,6 +112,7 @@ const Chatbox = () => {
                             )
                         })
                     }
+                    <div ref={lastMessageRef}></div>
                 </div>
             </div>
             <div className={wait === true ? "chatbox__dialog-container__typing--on" : "chatbox__dialog-container__typing--off"}>
@@ -114,7 +127,7 @@ const Chatbox = () => {
                             onChange={(e) => dispatch(updateCurrentMessage(e.target.value))}
                         >{currentMessage}</textarea>
                     </div>
-                    <div classname="">
+                    <div>
                         <input type="submit" value="Senden" className="chatbox__input__submitButton"/>
                     </div>
                 </form>
