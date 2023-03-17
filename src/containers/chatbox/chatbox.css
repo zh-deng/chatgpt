@@ -27,6 +27,7 @@
     background-color: rgb(199, 195, 195);
     padding: 1rem;
     border-radius: 1rem;
+    text-align: center;
 }
 
 .chatbox__dialog-container {

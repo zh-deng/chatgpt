@@ -35,6 +35,7 @@ const WikiInfo = () => {
                 <h1>
                     ChatGPT
                 </h1>
+                <p>Erfahren sie mehr über ChatGPT oder fragen Sie ihn einfach selbst!</p>
             </div>
             <WikiSelector menuList={menuList}/>
             <div className="wikiInfo__article-container">

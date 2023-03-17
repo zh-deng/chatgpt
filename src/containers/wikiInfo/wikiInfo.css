@@ -6,10 +6,21 @@
 
 .wikiInfo__heading {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 3rem 0;
+}
+
+.wikiInfo__heading h1 {
+    margin: 0 0 2rem 0;
     color: white;
+}
+
+.wikiInfo__heading p {
+    background-color: rgb(199, 195, 195);
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
 .wikiInfo__article-container {

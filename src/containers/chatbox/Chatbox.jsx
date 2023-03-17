@@ -17,7 +17,7 @@ const Chatbox = () => {
         focusLatestMessage();
     },[wait]);
 
-    const menuList = ["Englisch", "Deutsch", "Einfache Sprache", "Expertensprache"]
+    const menuList = ["Englisch", "Deutsch", "Triviale Sprache", "Expertensprache"]
     let contentStyle = "";
     switch(menuList[selected]) {
         case "Englisch":
@@ -26,7 +26,7 @@ const Chatbox = () => {
         case "Deutsch":
             contentStyle = "Reply only in german language"
             break;
-        case "Einfache Sprache":
+        case "Triviale Sprache":
             contentStyle = "Reply to me as if i am a 10 year old child"
             break;
         case "Expertensprache":
@@ -57,9 +57,11 @@ const Chatbox = () => {
             "model": "gpt-3.5-turbo",
             "messages": [
                 systemMessage,
-                ...apiMessages
+                ...apiMessages, 
+                {role: "user", content: currentMessage}
             ]
         };
+        console.log(apiFetchBody);
         await fetch("https://api.openai.com/v1/chat/completions",{
             method: "POST",
             headers: {
@@ -88,7 +90,7 @@ const Chatbox = () => {
                 <h1>
                     Let's chat!
                 </h1>
-                <p>Hier können sie sich mit dem neuen Chatsystem ChatGPT unterhalten. Derzeit ist das Feature noch in Produktion und hat deshalb noch kleine Bugs. Die erste Antwort des Bots ist eine zufällige. Jede weitere Antwort bezieht sich dann auf die vorherige Nachricht statt der aktuellen. Ich bitte um ihr Verständnis</p>
+                <p>Hier können sie sich mit dem neuen Chatsystem ChatGPT unterhalten. Der Chat kann entweder auf Englisch, Deutsch, in trivialer Sprache oder Expertensprache antworten.</p>
             </div>
             <BehaviourSelector menuList={menuList}/>
             <div className="chatbox__dialog-container">
