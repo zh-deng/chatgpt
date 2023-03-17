@@ -30,19 +30,32 @@
 }
 
 .pdfCreator__menu {
-    position: absolute;
-    height: 50%;
-    width: 60rem;
-    max-width: 95%;
+    position: fixed;
+    height: 100%;
+    width: 100%;
     background-color: grey;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 1rem;
     z-index: 99;
 }
 
-.pdfCreator__menu__exit {
+.pdfCreator__menu__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pdfCreator__menu__top p {
+    padding: 0.7rem 1rem;
+    background-color: red;
+    color: white;
+    margin: 0 1rem;
+    border-radius: 2rem;
+    letter-spacing: 0.03em;
+}
+
+.pdfCreator__menu__top__exit {
     display: flex;
     justify-content: flex-end;
     padding: 0.5rem;
@@ -50,20 +63,21 @@
     transition: 0.3s;
 }
 
-.pdfCreator__menu__exit span {
+.pdfCreator__menu__top__exit span {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
+    cursor: pointer;
 }
 
-.pdfCreator__menu__exit span:hover {
-    background-color: grey;
+.pdfCreator__menu__top__exit span:hover {
+    background-color: darkgrey;
 }
 
 .pdfCreator__menu__selection {
     width: 95%;
-    height: 75%;
+    height: 80%;
     padding: 0.5rem 1rem;
     margin: 0.5rem auto;
     background-color: white;
@@ -71,12 +85,20 @@
 }
 
 .pdfCreator__menu__selection div {
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.pdfCreator__menu__selection div:hover {
+    background-color: grey;
+    color: white;
 }
 
 .pdfCreator__menu__selection h4 {
-    padding: 0.5rem 0;
+    padding: 0 0 0.5rem 0;
 }
 
 .pdfCreator__menu__button {
@@ -85,16 +107,17 @@
     align-items: center;
     width: 80%;
     padding: 0.8rem;
-    margin: auto;
+    margin: 1rem auto;
     border: 1px solid black;
     border-radius: 0.5rem;
     background-color: red;
     color: white;
     gap: 0.5rem;
     transition: 0.3s;
+    cursor: pointer;
 }
 
-.pdfCreator__menu__buton:hover {
+.pdfCreator__menu__button:hover {
     background-color: rgb(185, 6, 6);
 }
 
@@ -109,5 +132,18 @@
 @media screen and (min-width: 720px) {
     .pdfCreator__button {
         width: 50%;
+    }
+    .pdfCreator__menu {
+        height: 45rem;
+        width: 60rem;
+        border-radius: 1rem;
+    }
+
+    .pdfCreator__menu__top p {
+        margin: 0 2rem;
+    }
+
+    .pdfCreator__menu__selection {
+        height: 75%;
     }
 }

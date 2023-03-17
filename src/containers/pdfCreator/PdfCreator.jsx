@@ -24,10 +24,13 @@ const PdfCreator = () => {
                 </p>
             </div>
             <div className={active === false ? "pdfCreator__menu invisible" : "pdfCreator__menu"}>
-                <div className="pdfCreator__menu__exit">
-                    <span onClick={handleButtonClick}>
-                        <ImCross />
-                    </span>
+                <div className="pdfCreator__menu__top">
+                    <p>Alle Auswählen</p>
+                    <div className="pdfCreator__menu__top__exit">
+                        <span onClick={handleButtonClick}>
+                            <ImCross />
+                        </span>
+                    </div>
                 </div>
                 <div className="pdfCreator__menu__selection">
                     {
