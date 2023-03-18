@@ -73,6 +73,7 @@ const PdfCreator = () => {
                             );
                         })
                     }
+                    {activeMessages}
                 </div>
                 <div className="pdfCreator__menu__button--download">
                     <PdfDownloadButton />
