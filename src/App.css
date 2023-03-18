@@ -5,6 +5,11 @@
   scroll-behavior: smooth;
 }
 
+html {
+  height: 100vh;
+  height: 100svh;
+}
+
 body {
   padding-top: 5rem; 
 }
