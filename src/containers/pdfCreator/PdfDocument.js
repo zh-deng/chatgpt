@@ -80,7 +80,6 @@ const PdfDownloadButton = () => {
         sortArray();
         activeArray.map((elem) => {
             dialogArray.push(dialog[elem]);
-            console.log(dialog[elem]);
         });
     }
     filterMessages();

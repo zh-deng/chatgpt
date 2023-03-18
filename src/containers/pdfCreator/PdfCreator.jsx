@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./pdfCreator.css";
 import { BsFillFileEarmarkPdfFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,6 +11,9 @@ const PdfCreator = () => {
     const { active, activeMessages, selectAll } = useSelector(selectPdfMenu);
     const { dialog } = useSelector(selectDialog);
     const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(toggleSelectAll());
+    }, [activeMessages])
 
     const handleButtonClick = () => {
         (dialog.length > 0) && dispatch(togglePdf());
@@ -26,6 +29,7 @@ const PdfCreator = () => {
     };
     const handleMessageClick = (index) => {
         activeMessages.includes(index) ? dispatch(removeActiveMessage(index)) : dispatch(addActiveMessage(index));
+        dispatch(toggleSelectAll());
     }
 
     return (
@@ -65,6 +69,7 @@ const PdfCreator = () => {
                                 >
                                     <h4>
                                         {messageObject.source}
+                                        {String(activeMessages.includes(index))}
                                     </h4>
                                     <p>
                                         {messageObject.message}
