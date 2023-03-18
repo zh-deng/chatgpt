@@ -33,7 +33,7 @@
     position: fixed;
     height: 100%;
     width: 100%;
-    background-color: grey;
+    background-color: black;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -53,6 +53,7 @@
     margin: 0 1rem;
     border-radius: 2rem;
     letter-spacing: 0.03em;
+    cursor: pointer;
 }
 
 .pdfCreator__menu__top__exit {
@@ -79,14 +80,14 @@
     width: 95%;
     height: 80%;
     padding: 0.5rem 1rem;
-    margin: 0.5rem auto;
+    margin: 0 auto 1rem auto;
     background-color: white;
     overflow: auto;
 }
 
 .pdfCreator__menu__selection div {
     padding: 0.5rem 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     border-radius: 1rem;
     transition: 0.3s;
     cursor: pointer;
@@ -99,34 +100,30 @@
 
 .pdfCreator__menu__selection h4 {
     padding: 0 0 0.5rem 0;
+    font-size: 1.5rem;
 }
 
-.pdfCreator__menu__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.activeMessage {
+    background-color: grey;
+    color: white;
+}
+
+.pdfCreator__menu__button--download {
+    position: absolute;
     width: 80%;
-    padding: 0.8rem;
+    height: 3rem;
     margin: 1rem auto;
     border: 1px solid black;
     border-radius: 0.5rem;
     background-color: red;
-    color: white;
-    gap: 0.5rem;
     transition: 0.3s;
     cursor: pointer;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.pdfCreator__menu__button:hover {
+.pdfCreator__menu__button--download:hover {
     background-color: rgb(185, 6, 6);
-}
-
-.pdfCreator__menu__button p {
-    font-size: 1rem;
-}
-
-.pdfCreator__menu__button__icon {
-    font-size: 1.5rem;
 }
 
 @media screen and (min-width: 720px) {

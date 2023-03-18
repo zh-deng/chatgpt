@@ -36,7 +36,7 @@ const Chatbox = () => {
     }
 
     const focusLatestMessage = () => {
-        lastMessageRef.current.scrollIntoView({block: "nearest"});
+        dialog.length > 0 && lastMessageRef.current.scrollIntoView({block: "nearest"});
     }
 
     const convertApiMessage = () => {
@@ -61,7 +61,6 @@ const Chatbox = () => {
                 {role: "user", content: currentMessage}
             ]
         };
-        console.log(apiFetchBody);
         await fetch("https://api.openai.com/v1/chat/completions",{
             method: "POST",
             headers: {
