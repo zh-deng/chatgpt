@@ -82,8 +82,6 @@ const PdfDownloadButton = () => {
             dialogArray.push(dialog[elem]);
             console.log(dialog[elem]);
         });
-        console.log(`activearray: ${activeArray}`);
-        console.log(`dialogarray: ${dialogArray[0]}`);
     }
     filterMessages();
     return (

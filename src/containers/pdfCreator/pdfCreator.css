@@ -70,6 +70,7 @@
     align-items: center;
     padding: 0.5rem;
     cursor: pointer;
+    color: white;
 }
 
 .pdfCreator__menu__top__exit span:hover {
