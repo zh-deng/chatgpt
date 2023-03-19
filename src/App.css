@@ -5,12 +5,6 @@
   scroll-behavior: smooth;
 }
 
-html, body {
-    height: 100vh;
-    height: -webkit-fill-available;
-    height: stretch;
-}
-
 body {
   padding-top: 5rem; 
 }
