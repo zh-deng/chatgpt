@@ -19,9 +19,8 @@ export const pdfMenuSlice = createSlice({
             state.activeMessages = [...state.activeMessages, action.payload];
         },
         removeActiveMessage: (state, action) => {
-            let newMessages = state.activeMessages.filter((elem) => {
-                return elem !== action.payload;
-            })
+            let newMessages = [...state.activeMessages];
+            newMessages.splice(newMessages.indexOf(action.payload), 1);
             state.activeMessages = [...newMessages];
         },
         removeAllMessages: (state) => {

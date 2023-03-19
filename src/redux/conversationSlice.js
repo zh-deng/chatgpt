@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const conversationSlice = createSlice({
     name: "conversation",
     initialState: {
-        dialog: [],
+        dialog: [{source: "user", message: "hey"}, {source: "chatGPT", message: "hello"}],
         currentMessage: "",
         wait: false
     },

@@ -11,9 +11,6 @@ const PdfCreator = () => {
     const { active, activeMessages, selectAll } = useSelector(selectPdfMenu);
     const { dialog } = useSelector(selectDialog);
     const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(toggleSelectAll());
-    }, [activeMessages])
 
     const handleButtonClick = () => {
         (dialog.length > 0) && dispatch(togglePdf());
