@@ -26,6 +26,7 @@ const PdfCreator = () => {
     };
     const handleMessageClick = (index) => {
         activeMessages.includes(index) ? dispatch(removeActiveMessage(index)) : dispatch(addActiveMessage(index));
+        //nach click disable all
         dispatch(toggleSelectAll());
     }
 
@@ -60,7 +61,7 @@ const PdfCreator = () => {
                         dialog.map((messageObject, index) => {
                             return (
                                 <div 
-                                    className={activeMessages.includes(index) ? "activeMessage" : ""}
+                                    style={activeMessages.includes(index) ? {backgroundColor: "grey", color: "white"} : {backgroundColor: "white", color: "black"}}
                                     key={messageObject.source + index}
                                     onClick={() => {handleMessageClick(index)}}
                                 >

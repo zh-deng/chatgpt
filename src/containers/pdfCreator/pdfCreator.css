@@ -104,12 +104,6 @@
     font-size: 1.5rem;
 }
 
-.activeMessage {
-    background-color: grey;
-    color: white;
-}
-
-
 .pdfCreator__menu__button--download {
     position: absolute;
     width: 80%;
