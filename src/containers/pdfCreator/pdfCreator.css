@@ -33,8 +33,6 @@
 .pdfCreator__menu {
     position: fixed;
     height: 100%;
-    height: -webkit-fill-available;
-    height: fill-available;
     width: 100%;
     background-color: black;
     left: 50%;
