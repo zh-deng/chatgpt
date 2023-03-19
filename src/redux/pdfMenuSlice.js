@@ -17,11 +17,13 @@ export const pdfMenuSlice = createSlice({
         },
         addActiveMessage: (state, action) => {
             state.activeMessages = [...state.activeMessages, action.payload];
+            state.activeMessages.length === 1 && (state.selectAll = true);
         },
         removeActiveMessage: (state, action) => {
             let newMessages = [...state.activeMessages];
             newMessages.splice(newMessages.indexOf(action.payload), 1);
             state.activeMessages = [...newMessages];
+            state.activeMessages.length === 0 && (state.selectAll = false);
         },
         removeAllMessages: (state) => {
             state.activeMessages = [];

@@ -26,8 +26,6 @@ const PdfCreator = () => {
     };
     const handleMessageClick = (index) => {
         activeMessages.includes(index) ? dispatch(removeActiveMessage(index)) : dispatch(addActiveMessage(index));
-        //nach click disable all
-        dispatch(toggleSelectAll());
     }
 
     return (
@@ -67,7 +65,6 @@ const PdfCreator = () => {
                                 >
                                     <h4>
                                         {messageObject.source}
-                                        {String(activeMessages.includes(index))}
                                     </h4>
                                     <p>
                                         {messageObject.message}
@@ -76,7 +73,6 @@ const PdfCreator = () => {
                             );
                         })
                     }
-                    {activeMessages}
                 </div>
                 <div className="pdfCreator__menu__button--download">
                     <PdfDownloadButton />

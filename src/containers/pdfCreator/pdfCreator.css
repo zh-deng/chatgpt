@@ -128,7 +128,7 @@
     }
     .pdfCreator__menu {
         height: 45rem;
-        width: 60rem;
+        width: 95%;
         border-radius: 1rem;
     }
 
@@ -138,5 +138,11 @@
 
     .pdfCreator__menu__selection {
         height: 75%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .pdfCreator__menu {
+        width: 60rem;
     }
 }
